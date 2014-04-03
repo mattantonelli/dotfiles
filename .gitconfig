@@ -1,0 +1,7 @@
+[user]
+	email = trevor@strieber.org
+	name = Trevor Strieber
+[push]
+	default = matching
+[alias]
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
