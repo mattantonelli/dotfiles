@@ -21,5 +21,8 @@ export EDITOR=vim
 # git undo last commit alias
 alias git-undo="git reset --soft 'HEAD^'"
 
+# take me to my git home
+alias git-home='cd "$(git rev-parse --show-toplevel)"'
+
 # reload .zshrc
 alias reload!='. ~/.zshrc'
