@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # zsh plugins
-plugins=(git rails ruby mvn rake ssh-agent)
+plugins=(git rails ruby mvn rake ssh-agent rbenv)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
