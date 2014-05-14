@@ -14,8 +14,8 @@ DISABLE_AUTO_UPDATE=true
 source $ZSH/oh-my-zsh.sh
 
 # load .localrc for machine specific settings
-if [[ -a ~/.localrc ]]; then
-  source ~/.localrc
+if [[ -a ~/.personal.rc ]]; then
+  source ~/.personal.rc
 fi
 
 # set vim as the default editor
