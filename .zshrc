@@ -7,6 +7,9 @@ ZSH_THEME="robbyrussell"
 # zsh plugins
 plugins=(git rails ruby rake rbenv mvn ssh-agent tmux)
 
+# turn off auto-updating, it will be handled by .dotfiles
+DISABLE_AUTO_UPDATE=true
+
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
