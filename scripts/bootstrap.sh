@@ -16,7 +16,12 @@ symlink_files() {
 }
 
 symlink_vimrc() {
-  symlink_files "$HOME/.vim/etc/vimrc" "$HOME/.vimrc"
+  vimrc_destination="$HOME/.vimrc"
+  if [ -L $vimrc_destination ]; then
+    info "symlink already exists $vimrc_destination"
+  else
+    symlink_files "$HOME/.vim/etc/vimrc" $vimrc_destination
+  fi
 }
 
 install_dotfiles() {
