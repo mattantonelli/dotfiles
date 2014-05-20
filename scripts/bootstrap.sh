@@ -25,7 +25,7 @@ symlink_vimrc() {
 }
 
 install_dotfiles() {
-  for source in `find $DOTFILES -maxdepth 1 | grep -v 'scripts' | grep -v '.git$' | grep -v '.dotfiles$' | grep -v '.gitmodules'`; do
+  for source in `find $DOTFILES -maxdepth 1 | grep -v 'scripts' | grep -v '.git$' | grep -v '.dotfiles$' | grep -v '.gitmodules$' | grep -v '.gitattributes$'`; do
     destination="$HOME/`basename $source`"
     if [ -L $destination ]; then
       info "symlink already exists $destination"
