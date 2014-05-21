@@ -1,6 +1,11 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# personal settings loaded before oh-my-zsh
+if [[ -a ~/.personal.before.rc ]]; then
+  source ~/.personal.before.rc
+fi
+
 # Set name of the theme to load.
 ZSH_THEME="robbyrussell"
 
@@ -13,9 +18,9 @@ DISABLE_AUTO_UPDATE=true
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# load .localrc for machine specific settings
-if [[ -a ~/.personal.rc ]]; then
-  source ~/.personal.rc
+# personal settings loaded after oh-my-zsh
+if [[ -a ~/.personal.after.rc ]]; then
+  source ~/.personal.after.rc
 fi
 
 # set vim as the default editor
