@@ -41,6 +41,7 @@ install_dotfiles() {
 
 pretend_gitignore_doesnt_change() {
   git update-index --assume-unchanged .gitconfig
+  info "don't forget to edit your .gitconfig"
 }
 
 install_dotfiles
