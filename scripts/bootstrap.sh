@@ -39,5 +39,11 @@ install_dotfiles() {
   done
 }
 
+pretend_gitignore_doesnt_change() {
+  git update-index --assume-unchanged .gitconfig
+  info "don't forget to edit your .gitconfig"
+}
+
 install_dotfiles
 symlink_vimrc
+pretend_gitignore_doesnt_change
