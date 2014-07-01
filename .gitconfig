@@ -7,3 +7,5 @@
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
 [hub]
 	protocol = https
+[core]
+	excludesfile = ~/.gitignore_global
