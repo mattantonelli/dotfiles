@@ -23,6 +23,9 @@ if [[ -a ~/.personal.after.rc ]]; then
   source ~/.personal.after.rc
 fi
 
+# set vim as the default editor
+export EDITOR=vim
+
 # vi mode
 bindkey -v
 bindkey jj vi-cmd-mode
@@ -33,9 +36,8 @@ bindkey "^E" end-of-line
 bindkey "^R" history-incremental-search-backward
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
-
-# set vim as the default editor
-export EDITOR=vim
+bindkey "^F" forward-char
+bindkey "^B" backward-char
 
 # git undo last commit alias
 alias git-undo="git reset --soft 'HEAD^'"
