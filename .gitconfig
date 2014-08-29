@@ -1,6 +1,6 @@
 [user]
-	email = youremail@example.com
-	name = Your Name
+	email = mattr.antonelli@gmail.com
+	name = Matt Antonelli
 [push]
 	default = matching
 [alias]
@@ -9,3 +9,4 @@
 	protocol = https
 [core]
 	excludesfile = ~/.gitignore_global
+	autocrlf = true
