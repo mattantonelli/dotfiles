@@ -5,7 +5,10 @@
 	default = matching
 [alias]
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	ctags = !.git/hooks/ctags
 [hub]
 	protocol = https
 [core]
 	excludesfile = ~/.gitignore_global
+[init]
+	templatedir = ~/.git_template
