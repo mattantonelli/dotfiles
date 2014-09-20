@@ -12,3 +12,7 @@
 	excludesfile = ~/.gitignore_global
 [init]
 	templatedir = ~/.git_template
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
