@@ -54,5 +54,8 @@ alias l='ls'
 alias la='ls -la'
 alias lah='ls -lah'
 
+# use ./bin when it's safe (useful for Spring / tim pope's suggestion)
+PATH=".git/safe/../../bin:$PATH"
+
 # reload .zshrc
 alias reload!='. ~/.zshrc'
