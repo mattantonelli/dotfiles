@@ -10,7 +10,6 @@
 	protocol = https
 [core]
 	excludesfile = ~/.gitignore_global
-	autocrlf = true
 [init]
 	templatedir = ~/.git_template
 [diff]
