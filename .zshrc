@@ -45,10 +45,17 @@ alias git-undo="git reset --soft 'HEAD^'"
 # take me to my git home
 alias git-home='cd "$(git rev-parse --show-toplevel)"'
 
+# git difftool aliases
+alias gdt='git difftool'
+alias gdtc='git difftool --cached'
+
 # ls aliases
 alias l='ls'
 alias la='ls -la'
 alias lah='ls -lah'
+
+# use ./bin when it's safe (useful for Spring / tim pope's suggestion)
+PATH=".git/safe/../../bin:$PATH"
 
 # reload .zshrc
 alias reload!='. ~/.zshrc'
