@@ -49,6 +49,12 @@ alias git-home='cd "$(git rev-parse --show-toplevel)"'
 alias gdt='git difftool'
 alias gdtc='git difftool --cached'
 
+# git add from pattern using ag
+function ag-git-add() {
+  ag --nocolor --null --files-with-matches "$*" | xargs -0 git add
+}
+alias aga=ag-git-add
+
 # ls aliases
 alias l='ls'
 alias la='ls -la'
