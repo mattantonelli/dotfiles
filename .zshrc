@@ -23,6 +23,13 @@ if [[ -a ~/.personal.after.rc ]]; then
   source ~/.personal.after.rc
 fi
 
+# correct terminal colors for gruvbox vim theme
+if [[ `uname` == 'Darwin' ]]; then
+  ~/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
+else
+  ~/.vim/plugged/gruvbox/gruvbox_256palette.sh
+fi
+
 # set vim as the default editor
 export EDITOR=vim
 
