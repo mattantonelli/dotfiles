@@ -70,5 +70,8 @@ alias lah='ls -lah'
 # use ./bin when it's safe (useful for Spring / tim pope's suggestion)
 PATH=".git/safe/../../bin:$PATH"
 
+# add node_modules/.bin to the path
+PATH="$HOME/node_modules/.bin:$PATH"
+
 # reload .zshrc
 alias reload!='. ~/.zshrc'
