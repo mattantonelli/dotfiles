@@ -10,7 +10,7 @@ fi
 ZSH_THEME="robbyrussell"
 
 # zsh plugins
-plugins=(git rails ruby rake rbenv)
+plugins=(git rails ruby rake rbenv tmux ssh-agent)
 
 # turn off auto-updating, it will be handled by .dotfiles
 DISABLE_AUTO_UPDATE=true
@@ -27,8 +27,10 @@ fi
 export EDITOR=vim
 
 # vi mode
-bindkey -v
 bindkey jj vi-cmd-mode
+
+# emacs mode
+bindkey -e
 
 # recover the readline keybindings
 bindkey "^A" beginning-of-line
