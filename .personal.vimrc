@@ -1,6 +1,6 @@
-" turn off stupid arrow key messages in normal mode
-nnoremap <silent> <Left>  <nop>
-nnoremap <silent> <Right> <nop>
+" turn on left and right in command mode
+nnoremap <Left>  <Left>
+nnoremap <Right> <Right>
 
 " turn on arrow keys in insert mode
 inoremap <Left>  <Left>
