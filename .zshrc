@@ -23,6 +23,13 @@ if [[ -a ~/.personal.after.rc ]]; then
   source ~/.personal.after.rc
 fi
 
+# correct terminal colors for gruvbox vim theme
+if [[ `uname` == 'Darwin' ]]; then
+  ~/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
+else
+  ~/.vim/plugged/gruvbox/gruvbox_256palette.sh
+fi
+
 # set vim as the default editor
 export EDITOR=vim
 
@@ -51,6 +58,12 @@ alias git-home='cd "$(git rev-parse --show-toplevel)"'
 alias gdt='git difftool'
 alias gdtc='git difftool --cached'
 
+# git add from pattern using ag
+function ag-git-add() {
+  ag --nocolor --null --files-with-matches "$*" | xargs -0 git add
+}
+alias aga=ag-git-add
+
 # ls aliases
 alias l='ls'
 alias la='ls -la'
@@ -58,6 +71,9 @@ alias lah='ls -lah'
 
 # use ./bin when it's safe (useful for Spring / tim pope's suggestion)
 PATH=".git/safe/../../bin:$PATH"
+
+# add node_modules/.bin to the path
+PATH="$HOME/node_modules/.bin:$PATH"
 
 # reload .zshrc
 alias reload!='. ~/.zshrc'
