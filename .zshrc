@@ -73,5 +73,8 @@ PATH=".git/safe/../../bin:$PATH"
 # add node_modules/.bin to the path
 PATH="$HOME/node_modules/.bin:$PATH"
 
+# Change less to ignore case, show colors, and improve the prompt
+export LESS='-iR-P%f (%i/%m) Line %lt/%L'
+
 # reload .zshrc
 alias reload!='. ~/.zshrc'
