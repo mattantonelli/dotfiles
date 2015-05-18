@@ -88,5 +88,7 @@ function last-migration() {
   ls -rt `find "$(find-git-home)/db/migrate" -type f -name "*" -print` | tail -1
 }
 
+# commands on last migration
 alias vlmg='vim "$(last-migration)"'
+alias rmlmg='rm "$(last-migration)"'
 

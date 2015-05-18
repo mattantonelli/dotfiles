@@ -14,3 +14,10 @@ nnoremap <silent> <Down> jzz
 
 " jellybeans !!
 colorscheme jellybeans
+
+" remap kk to ESC
+inoremap <silent> kk <ESC>
+
+" syntax highlighted fences!
+au BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
