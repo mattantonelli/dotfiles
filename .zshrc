@@ -10,7 +10,7 @@ fi
 ZSH_THEME="robbyrussell"
 
 # zsh plugins
-plugins=(git rails ruby rake rbenv tmux ssh-agent)
+plugins=(git rails ruby rake rbenv pyenv tmux ssh-agent)
 
 # turn off auto-updating, it will be handled by .dotfiles
 DISABLE_AUTO_UPDATE=true
@@ -26,9 +26,6 @@ fi
 # set vim as the default editor
 export EDITOR=vim
 
-# vi mode
-bindkey jj vi-cmd-mode
-
 # emacs mode
 bindkey -e
 
@@ -41,12 +38,22 @@ bindkey "^N" history-search-forward
 bindkey "^F" forward-char
 bindkey "^B" backward-char
 
-# git undo last commit alias
+# enable special key functionality
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
+
+# undo last commit
 alias git-undo="git reset --soft 'HEAD^'"
 
 # git difftool aliases
 alias gdt='git difftool'
 alias gdtc='git difftool --cached'
+
+# more git
+alias gs='git status'
+
+# rails server
+alias rs='rails server -b 0.0.0.0'
 
 # git add from pattern using ag
 function ag-git-add() {
@@ -84,4 +91,3 @@ function last-migration() {
 # commands on last migration
 alias vlmg='vim "$(last-migration)"'
 alias rmlmg='rm "$(last-migration)"'
-
