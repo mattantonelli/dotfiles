@@ -285,7 +285,6 @@ let g:ale_lint_on_enter = 0
 let g:airline#extensions#ale#enabled = 1
 
 " smoother gitgutter
-set signcolumn=yes
 set updatetime=100
 
 " load a personal vimrc if one exists
