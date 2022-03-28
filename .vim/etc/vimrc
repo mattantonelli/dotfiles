@@ -219,6 +219,10 @@ nnoremap <silent> <F10> :set cursorline!<CR>:set cursorcolumn!<CR>
 " GitGutter Settings
 let g:gitgutter_map_keys = 0
 
+" Fix gutter background color
+highlight! link SignColumn LineNr
+autocmd ColorScheme * highlight! link SignColumn LineNr
+
 " CtrlP Settings
 let g:ctrlp_custom_ignore = 'tags'
 
@@ -270,11 +274,12 @@ endif
 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.linenr = ' '
+let g:airline_symbols.maxlinenr = ': '
 let g:airline_symbols.paste = 'PASTE'
 let g:airline_symbols.notexists = ''
 let g:airline_symbols.readonly = ''
+let g:airline_symbols.colnr = ''
 
 " add jbuilder syntax highlighting
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
@@ -283,6 +288,10 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = { 'eruby': ['erubi'] }
+
+" snipMate
+let g:snipMate = { 'snippet_version' : 1 }
 
 " smoother gitgutter
 set updatetime=100

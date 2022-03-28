@@ -9,6 +9,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-markdown'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
+Plug 'ntpeters/vim-better-whitespace'
 
 " ruby on rails
 Plug 'vim-ruby/vim-ruby'
