@@ -84,3 +84,10 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Python
+*.pyc
+
+# Node
+node_modules/
+npm-debug.log
