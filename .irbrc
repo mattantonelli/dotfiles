@@ -5,6 +5,11 @@ require 'irb/ext/save-history'
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
+IRB.conf[:USE_COLORIZE] = false
+IRB.conf[:ECHO] = true
+IRB.conf[:ECHO_ON_ASSIGNMENT] = true
+IRB.conf[:INSPECT_MODE] = :inspect
+IRB.conf[:USE_AUTOCOMPLETE] = false
 
 class Object
   # list methods which aren't in superclass
