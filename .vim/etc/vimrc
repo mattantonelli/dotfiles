@@ -288,6 +288,7 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:airline#extensions#ale#enabled = 1
+let g:ale_virtualtext_cursor = 0
 let g:ale_linters = { 'eruby': ['erubi'] }
 
 " snipMate
