@@ -59,4 +59,9 @@ endif
 " color themes
 Plug 'nanotech/jellybeans.vim'
 
+" react
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+
 call plug#end()

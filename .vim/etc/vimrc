@@ -295,7 +295,53 @@ let g:ale_linters = { 'eruby': ['erubi'] }
 let g:snipMate = { 'snippet_version' : 1 }
 
 " smoother gitgutter
-set updatetime=100
+set updatetime=300
+
+" coc
+" use tab/shift+tab to navigate the autocomplete menu
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" use ctrl+j/k to navigate the autocomplete menu
+" TODO: stop vim from eating these commands sometimes
+" inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+" inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+
+" use ctrl+space to manually bring up the menu
+inoremap <silent><expr> <c-@> coc#refresh()
+
+" use enter to confirm the autocompletion
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+" only enable coc for whitelisted filetypes
+function! s:enable_coc_for_type()
+  let l:filesuffix_whitelist = ['jsx']
+
+  if index(l:filesuffix_whitelist, expand('%:e')) == -1
+    let b:coc_enabled = 0
+  endif
+endfunction
+
+autocmd BufRead,BufNewFile * call s:enable_coc_for_type()
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
 " load a personal vimrc if one exists
 let s:personalrc = expand($HOME . '/.personal.vimrc')
