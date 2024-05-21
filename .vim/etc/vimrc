@@ -237,6 +237,9 @@ hi DiffAdd      ctermfg=darkgreen
 hi DiffChange   ctermfg=yellow
 hi DiffDelete   ctermfg=darkred
 
+" hide ~ on unused lines
+highlight EndOfBuffer ctermfg=black
+
 " make the GUI nice
 if has('gui_running')
   " turn off the menu, tool, and scroll bar
