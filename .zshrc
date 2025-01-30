@@ -45,15 +45,13 @@ bindkey '\e[4~' end-of-line
 # undo last commit
 alias git-undo="git reset --soft 'HEAD^'"
 
-# git difftool aliases
-alias gdt='git difftool'
-alias gdtc='git difftool --cached'
-
-# more git
+# git
 alias gs='git status'
+alias gdc='git diff --cached'
 
-# rails server
+# rails
 alias rs='rails server -b 0.0.0.0'
+alias rg='rails generate'
 
 # git add from pattern using ag
 function ag-git-add() {
@@ -91,3 +89,9 @@ function last-migration() {
 # commands on last migration
 alias vlmg='vim "$(last-migration)"'
 alias rmlmg='rm "$(last-migration)"'
+
+# Respect git configurations for ignoring submodules
+GIT_STATUS_IGNORE_SUBMODULES=git
+
+# absolutely no blinking cursors here
+echo -ne "\e[2 q"

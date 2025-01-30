@@ -25,7 +25,7 @@ Plug 'tpope/vim-haml'
 
 " vim helpers
 Plug 'Lokaltog/vim-easymotion'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', {'branch': 'main'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'garbas/vim-snipmate'

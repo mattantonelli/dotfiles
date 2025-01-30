@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 require 'irb/completion'
-require 'irb/ext/save-history'
+require 'irb/ext/eval_history'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
@@ -16,19 +16,14 @@ class Object
   def local_methods(obj = self)
     (obj.methods - obj.class.superclass.instance_methods).sort
   end
-
-  # print documentation
-  #
-  #   ri 'Array#pop'
-  #   Array.ri
-  #   Array.ri :pop
-  #   arr.ri :pop
-  def ri(method = nil)
-    unless method && method =~ /^[A-Z]/ # if class isn't specified
-      klass = self.kind_of?(Class) ? name : self.class.name
-      method = [klass, method].compact.join('#')
-    end
-    system 'ri', method.to_s
-  end
 end
 
+# ANSI escape sequences for changing cursor style
+line_cursor = "\e[6 q"   # Line (beam) cursor
+block_cursor = "\e[2 q"  # Block cursor (default)
+
+# Change to line cursor when IRB starts
+print line_cursor
+
+# Restore default cursor when IRB exits
+at_exit { print block_cursor }

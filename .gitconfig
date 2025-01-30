@@ -2,7 +2,7 @@
 	email = contact@raelys.com
 	name = Matt Antonelli
 [push]
-	default = nothing
+	default = current
 [alias]
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
 	ctags = !.git/hooks/ctags
